@@ -199,7 +199,7 @@ TypeScript는 여러 개의 엄격한 타입-확인 기능을 설정할 수 있�
 
 **`noImplicitAny`**
 
-TypeScript의 타입 중에 타입을 추론하지 않는 느슨한 타입인 `any`가 있다. `any`로 타입을 선언한다는 것은 평범한 JavaScript문과 다를 바 없다. 그렇기에 `any`를 사용하는 것은 TypeScript를 사용하는 의미가 없다는 것과 마찬가지다. 그러므로 `noImplicitAny` 기능을 사용하여 `any`로 암시적 추정되는 타입에 대해 에러를 발생시켜 에러를 방지한다.
+TypeScript의 타입 중에 타입을 추론하지 않는 느슨한 타입인 `any`가 있다. `any`로 타입을 선언한다는 것은 평범한 JavaScript문과 다를 바 없다. 그렇기에 `any`를 사용하는 것은 TypeScript를 사용하는 의미가 없다는 것과 마찬가지다. 그러므로 `noImplicitAny` 기능을 사용하여 `any`로 암시적 추정되는 타입에 대해 에러를 발생시킨다.
 
 **`strictNullChecks`**
 

@@ -4,3 +4,5 @@
 
 - ### [기본](./docs/basic.md)
 
+- ### [타입](./docs/types.md)
+
