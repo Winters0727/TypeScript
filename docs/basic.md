@@ -170,3 +170,37 @@ let msg = "Hello, World!"; // msg: string
 ```
 
 그렇기 때문에 타입 시스템에 의해 자동으로 타입이 정의될 수 있는 경우에는 명시적 타입 선언을 하지 않는 편이 좋다.
+
+
+
+### 타입 제거
+
+인자의 타입을 다시 제거해보자.
+
+```typescript
+"use strict";
+function greet(person, date) {
+    console.log("Hello " + person + ", today is " + date.toDateString() + "!");
+}
+greet("Maddison", new Date());
+```
+
+타입 선언문을 제거했을 때, 변환된 JavaScript 파일은 어떻게 변할까?
+
+타입 선언문을 제거해도 생성된 `hello.js` 파일은 변화가 없다. 타입 선언문은 TypeScript 컴파일러에게 변수의 타입을 확인시키기 위한 것이지 JavaScript 컴파일러를 위한 것이 아니기 때문이다. 따라서, 타입 선언문이 없다해도 JavaScript 파일의 Runtime 시에 영향을 주지 않는다.
+
+하지만, 우리는 이미 정적 타입 언어가 가지는 장점이 무엇인지 안다. 따라서, TypeScript 파일로 코드를 작성한 뒤에 TypeScript 컴파일러로 변환된 JavaScript 파일을 사용하는 방법이 안전하다.
+
+
+
+### 엄격한 타입 기능
+
+TypeScript는 여러 개의 엄격한 타입-확인 기능을 설정할 수 있다. 예를 들어, `strict` 기능을 설정할 경우에는 CLI에 `--strict` 또는 `tsconfig.json` 파일에 `"strict" : true`를 통해 엄격한 타입-확인 기능을 사용할 수 있다. 이 외에도 가장 많이 사용되어 알아야할 기능으로는 `noImplicitAny`와 `strictNullChecks`가 있다.
+
+**`noImplicitAny`**
+
+TypeScript의 타입 중에 타입을 추론하지 않는 느슨한 타입인 `any`가 있다. `any`로 타입을 선언한다는 것은 평범한 JavaScript문과 다를 바 없다. 그렇기에 `any`를 사용하는 것은 TypeScript를 사용하는 의미가 없다는 것과 마찬가지다. 그러므로 `noImplicitAny` 기능을 사용하여 `any`로 암시적 추정되는 타입에 대해 에러를 발생시켜 에러를 방지한다.
+
+**`strictNullChecks`**
+
+기본적으로 `null`과 `undefined`는 어떤 타입의 변수에도 적용이 가능하다. 하지만, 이를 사용하고 기억하지 않는 것은 수 많은 에러를 양산할 수 있다. `strictNullChecks` 기능을 사용하면 `null`과 `undefined`를 사용할 때 명시적으로 사용해야하기 때문에 에러를 방지한다.
