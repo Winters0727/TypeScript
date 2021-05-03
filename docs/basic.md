@@ -1,6 +1,6 @@
 # TypeScript 기본
 
-JavaScript는 '동적 타입 언어'(Runtime 시에 타입을 결정)이기 때문에 Runtime이 될 때까지 사용되는 변수의 타입을 알 수 없다. 그렇기 때문에 TypeScript를 사용하여 '정적 타입 언어'(Develop 시에 타입을 결정)처럼 프로그래밍을 할 수 있다.
+JavaScript는 '동적 타입 언어'(런타임 시에 타입을 결정)이기 때문에 런타임이 될 때까지 사용되는 변수의 타입을 알 수 없다. 그렇기 때문에 TypeScript를 사용하여 '정적 타입 언어'(Develop 시에 타입을 결정)처럼 프로그래밍을 할 수 있다.
 
 다음 예시를 보자.
 
@@ -32,7 +32,7 @@ const message = 'Hello, World!';
 TypeError : message is not function
 ```
 
-그렇다면 프로그래밍 과정에서 `message`가 호출 가능한 객체인지 검증하면 되는 것이 아닌가? 앞에서 언급했듯이 JavaScript는 동적 타입 언어이기 때문에 Runtime 시 까지 `message`의 타입을 알 수가 없다. 간접적으로나마 `typeof` 키워드를 통해 Runtime 시 `message`의 타입을 확인할 수 있다.
+그렇다면 프로그래밍 과정에서 `message`가 호출 가능한 객체인지 검증하면 되는 것이 아닌가? 앞에서 언급했듯이 JavaScript는 동적 타입 언어이기 때문에 런타임 시 까지 `message`의 타입을 알 수가 없다. 간접적으로나마 `typeof` 키워드를 통해 런타임 시 `message`의 타입을 확인할 수 있다.
 
 하지만, 상기 방법도 `string`, `number`와 같은 원시 자료형에 대해서만 적용할 수 있다. `function`는 `Object`로 체이닝되어 있기 때문에 동일한 방법을 적용할 수 없다.
 
@@ -56,7 +56,7 @@ message();
 
 ### 예외 처리
 
-JavaScript는 유연한 언어이기 때문에 다음과 같이 존재하지 않는 프로퍼티를 참조할 때, runtime 시에 에러를 발생시키지 않고 `undefined`를 반환한다.
+JavaScript는 유연한 언어이기 때문에 다음과 같이 존재하지 않는 프로퍼티를 참조할 때, 런타임 시에 에러를 발생시키지 않고 `undefined`를 반환한다.
 
 ```javascript
 const user = {
@@ -187,7 +187,7 @@ greet("Maddison", new Date());
 
 타입 선언문을 제거했을 때, 변환된 JavaScript 파일은 어떻게 변할까?
 
-타입 선언문을 제거해도 생성된 `hello.js` 파일은 변화가 없다. 타입 선언문은 TypeScript 컴파일러에게 변수의 타입을 확인시키기 위한 것이지 JavaScript 컴파일러를 위한 것이 아니기 때문이다. 따라서, 타입 선언문이 없다해도 JavaScript 파일의 Runtime 시에 영향을 주지 않는다.
+타입 선언문을 제거해도 생성된 `hello.js` 파일은 변화가 없다. 타입 선언문은 TypeScript 컴파일러에게 변수의 타입을 확인시키기 위한 것이지 JavaScript 컴파일러를 위한 것이 아니기 때문이다. 따라서, 타입 선언문이 없다해도 JavaScript 파일의 런타임 시에 영향을 주지 않는다.
 
 하지만, 우리는 이미 정적 타입 언어가 가지는 장점이 무엇인지 안다. 따라서, TypeScript 파일로 코드를 작성한 뒤에 TypeScript 컴파일러로 변환된 JavaScript 파일을 사용하는 방법이 안전하다.
 
